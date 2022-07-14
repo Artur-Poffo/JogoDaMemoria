@@ -1,0 +1,93 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cards {
+    display: grid;
+    grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.card {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: all .7s ease;
+} 
+
+.front, .back {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 20px;
+    position: absolute;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.45);
+    backface-visibility: hidden;
+}
+
+.flip {
+    transform: rotateY(180deg);
+}
+
+.front {
+    transform: rotateY(180deg);
+    background-color: #313131;
+}
+
+.back {
+    background-color: aqua;
+    font-size: 30px;
+    color: #313131;
+}
+
+#gameOver {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .9);
+    z-index: 1;
+    display: none;
+}
+
+#gameOver h1 {
+    color: rgb(223, 223, 55);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+#gameOver button {
+    width: 200px;
+    height: 50px;
+    background-color: rgb(223, 223, 55);
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
